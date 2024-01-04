@@ -21,20 +21,16 @@
             text-align: justify;
         }
 
-
-      
-
         #video-container {
             display: flex;
-            flex-direction: column; 
+            flex-direction: column;
             align-items: center;
             margin-top: 20px;
             text-align: center;
-           
         }
 
         iframe {
-            width: 100%; 
+            width: 100%;
             height: 200px;
             margin-bottom: 20px;
             box-sizing: border-box;
@@ -43,10 +39,6 @@
         section {
             text-align: center;
             margin-top: 80px;
-        }
-
-        #contact {
-            margin-bottom: 20px;
         }
 
         .col-md-6 {
@@ -59,16 +51,57 @@
             width: 100%;
         }
 
+        /* Ajustes para el texto debajo de las imágenes */
+        img {
+            max-width: 100%; /* Hace que las imágenes se ajusten al ancho máximo del contenedor */
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        img + p {
+            font-size: 14px;
+            margin-bottom: 20px; /* Añadido para espaciar el texto debajo de las imágenes */
+        }
+
+        h2.text-center {
+            font-size: 24px;
+        }
+
+        p#servicios-text {
+            font-size: 14px;
+        }
+
+        /* Estilo para alinear imágenes una al lado de la otra */
+        .img-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .img-container div {
+            width: 48%; /* Ajusta el ancho según tus necesidades */
+            box-sizing: border-box;
+        }
+
+        .img-container img {
+            width: 100%; /* Ajusta el ancho de la imagen al 100% */
+            height: auto;
+        }
+
+        /* Media query para ajustar la altura de los iframes en pantallas más pequeñas */
         @media (max-width: 767px) {
             iframe {
-                height: 150px; /* Ajuste adicional de altura para pantallas más pequeñas */
+                height: 150px;
+            }
+
+            .img-container div {
+                width: 100%; /* Cambiar a ancho completo en pantallas más pequeñas */
             }
         }
     </style>
 </head>
 
 <body>
-
     <header>
         <div class="col-md-3">
             <div class="center">
@@ -85,24 +118,55 @@
         <p> Descubre el mundo del contenido audiovisual elevado con VitalSphere Studio! Somos una productora apasionada
             dedicada a impulsar tu presencia en línea con creatividad incomparable y servicios integrales. Desde el
             diseño de páginas web hasta la creación de música original y la producción de reels impactantes, ofrecemos
-            soluciones audiovisuales que cautivan y resuenan.
+            soluciones audiovisuales que cautivan y resuenan. </p>
 
-            En VitalSphere Studio, fusionamos la innovación con la técnica para llevar tus ideas más allá de las
-            expectativas. Creamos experiencias visuales y auditivas que destacan en el vasto panorama del marketing
-            digital. Nuestro equipo de expertos no solo construye páginas web funcionales y estéticamente atractivas,
-            sino que también genera contenido que cuenta historias, conecta con tu audiencia y potencia tu marca.
+            <p>  En VitalSphere Studio, fusionamos la pasión por el sonido con la innovación técnica, llevando a cabo proyectos que trascienden las expectativas. Si buscas transformar tu proyecto audiovisual con una banda sonora cautivadora y una edición de sonido impecable, estás en el lugar adecuado. ¡Confía en nosotros para dar vida a tu visión sonora de manera extraordinaria!" </p>
 
-            Ya sea que necesites un sitio web que refleje la esencia de tu negocio, música original que complemente tu
+            <p>    Ya sea que necesites un sitio web que refleje la esencia de tu negocio, música original que complemente tu
             contenido o reels que capturen la esencia de tu marca, VitalSphere Studio está aquí para convertir tus
             visiones en realidad. En un mundo digital en constante evolución, destacamos con estrategias creativas y
-            soluciones audiovisuales que te diferencian.
+            soluciones audiovisuales que te diferencian. 🚀🎥🎶 </p>
 
-            ¡Eleva tu presencia en línea con VitalSphere Studio: donde la creatividad y la calidad se encuentran para
-            dar vida a tus ideas! 🚀🎥🎶
+ 
         </p>
 
+        <section>
 
-        <!-- Resto del contenido -->
+        </section>
+
+        <h2 class="text-center"> Diseño sonoro para Teatro y Cine</h2>
+
+        <div>
+
+        </div>
+        <div class="container img-container">
+            <div>
+                <img src="jodo.jpeg" alt="Teatro Jodorowsky. Edición de sonido">
+                <p>Teatro Jodorowsky. Edición de sonido</p>
+            </div>
+            <div>
+                <img src="jodok.jpeg" alt="">
+                <p>Teatro Jodorowsky. Edición de sonido</p>
+            </div>
+            <div>
+                <img src="cuerp.jpeg" alt="">
+                <p>ESCAC FILMS. Banda sonora, edición de sonido</p>
+            </div>
+            <div>
+                <img src="bosques.jpeg" alt="">
+                <p>Celula FILMS. Banda sonora, edición de sonido.</p>
+            </div>
+        </div>
+
+            <section>
+
+                <div>
+
+                </div>
+
+        <h2 class="text-center"> Reel edición video, diseño y edición de sonido.
+
+            <div></div>
 
         <div id="video-container">
             <iframe src="https://player.vimeo.com/video/897654152?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
@@ -111,20 +175,22 @@
                 frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
     </p>
+</section>
 
-    <section>
 
         <section id="servicios" class="py-5">
-            <h2 class="text-center">Servicios que ofrecemos 
-            </h2>
+            <h2 class="text-center">Servicios que ofrecemos </h2>
            
+            <div>
+
+            </div>
         <p>√ Creación, diseño y desarrollo de contenido web, videos y reels para redes. </p> 
-         <p> √ Creación de páginas web </p>
+         <p> √ Creación de paginas web </p>
             <p> √ Edición de video  </p> 
              <p> √ Edición y diseño de sonido </p>
                   <p> √ Creación de banda sonora </p>
                     <p> √ Creación de estrategias para marketing digital </p>
-                       <p> √ Mentoría en desarrollo creativo</p>       
+                       <p> √ Mentoría en desarrolo creativo</p>       
    
 
     </div>
@@ -179,3 +245,5 @@
 </body>
 
 </html>
+
+
