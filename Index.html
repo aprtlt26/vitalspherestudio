@@ -16,35 +16,33 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #000; /* Fondo negro */
-            color: #c3c1c1; /* Texto gris */
+            background-color: #fbfbfb;
+            color: #212121;
             text-align: justify;
         }
 
-        header {
-            margin-top: 20px; /* Ajusta el margen superior del encabezado */
-        }
+
+      
 
         #video-container {
             display: flex;
-            justify-content: center;
+            flex-direction: column; 
             align-items: center;
-            flex-wrap: wrap;
-            margin-top: 20px; /* Ajusta el margen superior del video reel */
-            text-align: center; /* Centrar el contenido */
+            margin-top: 20px;
+            text-align: center;
+           
         }
 
         iframe {
-            width: 100%; /* Ajusta el ancho de los iframes para que haya espacio entre ellos */
-            max-width: 800px; /* Establecer un ancho máximo */
-            height: 300px;
-            margin-bottom: 20px; /* Añade margen inferior entre los iframes */
+            width: 100%; 
+            height: 200px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
         }
 
         section {
-            text-align: center; /* Centrar el contenido de la sección Web Develop */
-            margin-top: 80px; 
-
+            text-align: center;
+            margin-top: 80px;
         }
 
         #contact {
@@ -52,18 +50,18 @@
         }
 
         .col-md-6 {
-            max-width: 800px; /* Ajusta el ancho máximo del contenido principal */
+            max-width: 800px;
             width: 100%;
         }
 
         .pie {
-            height: 50px; /* Ajusta la altura del pie de página */
+            height: 50px;
             width: 100%;
         }
 
         @media (max-width: 767px) {
             iframe {
-                height: 200px; /* Ajusta la altura de los iframes para pantallas pequeñas */
+                height: 150px; /* Ajuste adicional de altura para pantallas más pequeñas */
             }
         }
     </style>
@@ -74,17 +72,15 @@
     <header>
         <div class="col-md-3">
             <div class="center">
-                <video width="520" height="340" autoplay muted loop>
-                    <source src="logoport.m4v" type="video/mp4">
+                <video width="520" height="340" style="border: 0; margin: 0;" autoplay muted loop>
+                    <source src="portaj.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
     </header>
 
     <div class="col-md-6">
-        <!-- Contenido del cuerpo de la página -->
-
-        <h4>Productora Audiovisual especializada en Marqueting digital.</h4>
+        <h4>Productora Audiovisual especializada en Marketing digital.</h4>
 
         <p> Descubre el mundo del contenido audiovisual elevado con VitalSphere Studio! Somos una productora apasionada
             dedicada a impulsar tu presencia en línea con creatividad incomparable y servicios integrales. Desde el
@@ -105,62 +101,81 @@
             dar vida a tus ideas! 🚀🎥🎶
         </p>
 
+
+        <!-- Resto del contenido -->
+
         <div id="video-container">
             <iframe src="https://player.vimeo.com/video/897654152?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="width: 170%;"></iframe>
+                frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             <iframe src="https://player.vimeo.com/video/869626016?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="width: 100%;"></iframe>
+                frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
+    </p>
 
-        <div class="container">
-            <section id="Web-Develop">
-                <h4>Web Develop</h4>
-                <p>web pages designed and developed with HTML, CSS and JAVA SC programming languages.</p>
-                <h6> [health] </h6>
-                <a href="https://isabelhernandez.netlify.app/"target="_blank">* Isabel Hernández. Medicina y Recuperación. </a>
-                <div></div>
-                <a href="https://optipluss.netlify.app/"target="_blank">* Optipluss. Salud Visual. </a>
-                <div></div>
-                <div></div>
-                <a href="https://yeisonmicropigmentacion.com/"target="_blank">* Micropigmentación Capilar </a>
-                <div></div>
-                <h6> [advertising] </h6>
-                <a href="https://gourmet-floral.netlify.app/"target="_blank">* OnlineServiceFood </a>
-                <div></div>
-                <h6> [interactive art] </h6>
-                <a href="https://aprtlt26.github.io/Mandala/"target="_blank">* Interactive Paint Meditation </a>
-                <div>
-                </div>
-                <a href="https://soundtarot.com/"target="_blank">* Sound Tarot  </a>
-                <div></div>
-                <div></div>
-      
-                <h6> [Magazine] </h6>
-                <a href="https://ideofxnica.netlify.app/ "target="_blank">* Revista Ideofónica. </a>
-                <div></div>
-            </section>
+    <section>
 
-            <section id="contact">
-                <h4>Contact</h4>
-                <p>aprtlt26@gmail.com</p>
-                <p>+57 3160533996</p>
-            </section>
+        <section id="servicios" class="py-5">
+            <h2 class="text-center">Servicios que ofrecemos 
+            </h2>
+           
+        <p>√ Creación, diseño y desarrollo de contenido web, videos y reels para redes. </p> 
+         <p> √ Creación de paginas web </p>
+            <p> √ Edición de video  </p> 
+             <p> √ Edición y diseño de sonido </p>
+                  <p> √ Creación de banda sonora </p>
+                    <p> √ Creación de estrategias para marketing digital </p>
+                       <p> √ Mentoría en desarrolo creativo</p>       
+   
 
-            <div class="pie"></div>
+    </div>
+    <div class="container">
+        <section id="Desarrollo Web">
+            <h4>Desarrollo Web</h4>
+            <p>Paginas web creadas con lenguajes de programación HTML, CSS, JAVA SC. Diseño interactivo</p>
+            <h6> [health] </h6>
+            <a href="https://isabelhernandez.netlify.app/"target="_blank">* Isabel Hernández. Fisioterapia y Recuperación. </a>
+            <div></div>
+            <a href="https://optipluss.netlify.app/"target="_blank">* Optipluss. Salud Visual. </a>
+            <div></div>
+            <div></div>
+            <a href="https://yeisonmicropigmentacion.com/"target="_blank">* Micropigmentación Capilar </a>
+            <div></div>
+            <h6> [Comida Artesanal] </h6>
+            <a href="https://gourmet-floral.netlify.app/"target="_blank">* OnlineServiceFood </a>
+            <div></div>
+            <h6> [interactive art] </h6>
+            <a href="https://aprtlt26.github.io/Mandala/"target="_blank">* Meditación interactiva. </a>
+            <div>
+            </div>
+            <a href="https://soundtarot.com/"target="_blank">* Sound Tarot  </a>
+            <div></div>
+            <div></div>
+  
+            <h6> [Magazine] </h6>
+            <a href="https://ideofxnica.netlify.app/ "target="_blank">* Revista Ideofónica. </a>
+            <div></div>
+        </section>
 
-            <p><small>Design and Develop by <a href="https://alfonsopretelt.com/">Alfonso Pretelt</a></small></p>
+        <section id="contact">
+            <h4>Contact</h4>
+            <p>aprtlt26@gmail.com</p>
+            <p>+57 3160533996</p>
+        </section>
 
         <div class="pie"></div>
-        </div>
-    </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <p><small>Design and Develop by <a href="https://alfonsopretelt.com/">Alfonso Pretelt</a></small></p>
 
     <div class="pie"></div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<div class="pie"></div>
 
 </body>
 
 </html>
-
