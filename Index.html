@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>VitalSphere Studio</title>
     <style>
         body {
@@ -21,18 +23,9 @@
             text-align: justify;
         }
 
-        #video-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-            text-align: center;
-        }
-
         iframe {
             width: 100%;
-            height: 200px;
-            margin-bottom: 20px;
+            height: 100%;
             box-sizing: border-box;
         }
 
@@ -51,16 +44,15 @@
             width: 100%;
         }
 
-        /* Ajustes para el texto debajo de las imágenes */
         img {
-            max-width: 100%; /* Hace que las imágenes se ajusten al ancho máximo del contenedor */
+            max-width: 100%;
             height: auto;
             margin-bottom: 10px;
         }
 
-        img + p {
+        img+p {
             font-size: 14px;
-            margin-bottom: 20px; /* Añadido para espaciar el texto debajo de las imágenes */
+            margin-bottom: 20px;
         }
 
         h2.text-center {
@@ -71,7 +63,19 @@
             font-size: 14px;
         }
 
-        /* Estilo para alinear imágenes una al lado de la otra */
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 400px; /* Ajusta la altura según tus necesidades */
+            margin-bottom: 20px;
+        }
+
         .img-container {
             display: flex;
             flex-wrap: wrap;
@@ -79,23 +83,22 @@
         }
 
         .img-container div {
-            width: 48%; /* Ajusta el ancho según tus necesidades */
+            width: 48%;
             box-sizing: border-box;
         }
 
         .img-container img {
-            width: 100%; /* Ajusta el ancho de la imagen al 100% */
+            width: 100%;
             height: auto;
         }
 
-        /* Media query para ajustar la altura de los iframes en pantallas más pequeñas */
         @media (max-width: 767px) {
-            iframe {
-                height: 150px;
+            .video-container iframe {
+                height: 200px; /* Ajusta la altura para pantallas más pequeñas */
             }
 
             .img-container div {
-                width: 100%; /* Cambiar a ancho completo en pantallas más pequeñas */
+                width: 100%;
             }
         }
     </style>
@@ -113,26 +116,19 @@
     </header>
 
     <div class="col-md-6">
-        <h4>Audiovisual Producer Specializing In Shorts for Networks.</h4>
+        <h4>Productora Audiovisual especializada en Marketing digital.</h4>
 
-        <p> "Welcome to VitalSphere Studio, your gateway to the world of audiovisual creativity! We are a production company specializing in crafting captivating shorts tailored for social media platforms. At VitalSphere, we blend innovation with technical prowess to deliver a unique visual experience. </p>
+        <p>"Welcome to VitalSphere Studio, your gateway to the world of audiovisual creativity! We are a production company specializing in crafting captivating shorts tailored for social media platforms. At VitalSphere, we blend innovation with technical prowess to deliver a unique visual experience.</p>
 
+        <p>From dynamic clips to impactful mini-documentaries, VitalSphere Studio creates content that stands out in the vast digital landscape. Our focus is on capturing the essence of your message in engaging shorts that grab your audience's attention and foster meaningful connections.</p>
 
-        <p>   From dynamic clips to impactful mini-documentaries, VitalSphere Studio creates content that stands out in the vast digital landscape. Our focus is on capturing the essence of your message in engaging shorts that grab your audience's attention and foster meaningful connections.</p>
-            
-        <p>    Dive into the cinematic quality of our shorts, supported by a passionate and creative team dedicated to elevating your ideas to new heights. Whether you're looking to promote your brand, tell an emotive story, or simply shine on social media, at VitalSphere Studio, we are ready to bring your visions to life through shorts that resonate and endure. Boost your online presence with VitalSphere Studio, where creativity and quality converge to create unforgettable visual experiences. 🚀📽️✨" </p>
-
- 
-        </p>
+        <p>Dive into the cinematic quality of our shorts, supported by a passionate and creative team dedicated to elevating your ideas to new heights. Whether you're looking to promote your brand, tell an emotive story, or simply shine on social media, at VitalSphere Studio, we are ready to bring your visions to life through shorts that resonate and endure. Boost your online presence with VitalSphere Studio, where creativity and quality converge to create unforgettable visual experiences. 🚀📽️✨"</p>
 
         <section>
 
         </section>
 
-
         <div>
-
-     
 
             <section>
 
@@ -140,85 +136,110 @@
 
                 </div>
 
-        <h2 class="text-center"> Reel Video Editing & Design.
+                <h2 class="text-center">Edición de Video, Redes, Videoclip, Videoarte. Reel
 
-            <div></div>
+                    <div></div>
 
-        <div id="video-container">
-            <iframe src="https://player.vimeo.com/video/897654152?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            <iframe src="https://player.vimeo.com/video/869626016?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-container">
+
+                        <iframe src="https://www.youtube.com/embed/xi-qcc7qCd8?si=60plLvi87qIzJhoF&amp;start=1"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+
+                        <p>Video para youtube</p>
+
+                        <iframe src="https://www.youtube.com/embed/NFMWx3zIcgc?si=1_DzQ5zVcQy0f4SQ"
+                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                            gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                        <p>Videoclip en vivo, Producción, edición de video, producción, mezcla y mastering de audio.</p>
+
+                        <iframe src="https://www.youtube.com/embed/cF_TJV_2beg?si=O4sVNxC_Refbqqo0" title="YouTube video player"
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                        <p>Video Arte</p>
+
+                        <iframe src="https://player.vimeo.com/video/869626016?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+                        <p>Documental</p>
+
+                        <iframe src="https://player.vimeo.com/video/897654152?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+                        <p>Reel para redes</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="servicios" class="py-5">
+                <h2 class="text-center">Servicios que ofrecemos </h2>
+
+                <div>
+
+                </div>
+                <p>√ Creación, diseño y desarrollo de contenido web, videos y reels para redes. </p>
+                <p> √ Creación de paginas web </p>
+                <p> √ Edición de video </p>
+                <p> √ Edición y diseño de sonido </p>
+                <p> √ Creación de banda sonora </p>
+                <p> √ Creación de estrategias para marketing digital </p>
+                <p> √ Mentoría en desarrolo creativo</p>
+
+            </section>
         </div>
-    </p>
-</section>
+        <div class="container">
+            <section id="Desarrollo Web">
+                <h4>Desarrollo Web</h4>
+                <p>Paginas web creadas con lenguajes de programación HTML, CSS, JAVA SC. Diseño interactivo</p>
+                <h6> [health] </h6>
+                <a href="https://isabelhernandez.netlify.app/" target="_blank">* Isabel Hernández. Fisioterapia y
+                    Recuperación. </a>
+                <div></div>
+                <a href="https://optipluss.netlify.app/" target="_blank">* Optipluss. Salud Visual. </a>
+                <div></div>
+                <div></div>
+                <a href="https://yeisonmicropigmentacion.com/" target="_blank">* Micropigmentación Capilar </a>
+                <div></div>
+                <h6> [Comida Artesanal] </h6>
+                <a href="https://gourmet-floral.netlify.app/" target="_blank">* OnlineServiceFood </a>
+                <div></div>
+                <h6> [interactive art] </h6>
+                <a href="https://aprtlt26.github.io/Mandala/" target="_blank">* Meditación interactiva. </a>
+                <div>
+                </div>
+                <a href="https://soundtarot.com/" target="_blank">* Sound Tarot </a>
+                <div></div>
+                <div></div>
 
+                <h6> [Magazine] </h6>
+                <a href="https://ideofxnica.netlify.app/ " target="_blank">* Revista Ideofónica. </a>
+                <div></div>
+            </section>
 
-        <section id="servicios" class="py-5">
-           <h2 class="text-center">Services we offer </h2>
-           
-             <div>
+            <section id="contact">
+                <h4>Contact</h4>
+                <p>aprtlt26@gmail.com</p>
+                <p>+57 3160533996</p>
+            </section>
 
-             </div>
-         <p>√ Creation, design and development of web content, videos and reels for networks. </p>
-          <p> √ Creation of web pages </p>
-             <p> √ Video editing </p>
-              <p> √ Editing and sound design </p>
-                   <p> √ Soundtrack creation </p>
-                     <p> √ Creation of digital marketing strategies </p>
-                        <p> √ Mentoring in creative development</p>
+            <div class="pie"></div>
 
-    </div>
-    <div class="container">
-        <section id="Desarrollo Web">
-            <h4>Web Development</h4>
-            <p>Paginas web creadas con lenguajes de programación HTML, CSS, JAVA SC. Diseño interactivo</p>
-            <h6> [health] </h6>
-            <a href="https://isabelhernandez.netlify.app/"target="_blank">* Isabel Hernández. Fisioterapia y Recuperación. </a>
-            <div></div>
-            <a href="https://optipluss.netlify.app/"target="_blank">* Optipluss. Salud Visual. </a>
-            <div></div>
-            <div></div>
-            <a href="https://yeisonmicropigmentacion.com/"target="_blank">* Micropigmentación Capilar </a>
-            <div></div>
-            <h6> [Comida Artesanal] </h6>
-            <a href="https://gourmet-floral.netlify.app/"target="_blank">* OnlineServiceFood </a>
-            <div></div>
-            <h6> [interactive art] </h6>
-            <a href="https://aprtlt26.github.io/Mandala/"target="_blank">* Meditación interactiva. </a>
-            <div>
-            </div>
-            <a href="https://soundtarot.com/"target="_blank">* Sound Tarot  </a>
-            <div></div>
-            <div></div>
-  
-            <h6> [Magazine] </h6>
-            <a href="https://ideofxnica.netlify.app/ "target="_blank">* Revista Ideofónica. </a>
-            <div></div>
-        </section>
+            <p><small>Design and Develop by <a href="https://alfonsopretelt.com/">Alfonso Pretelt</a></small></p>
 
-        <section id="contact">
-            <h4>Contact</h4>
-            <p>aprtlt26@gmail.com</p>
-            <p>+57 3160533996</p>
-        </section>
+            <div class="pie"></div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
         <div class="pie"></div>
 
-        <p><small>Design and Develop by <a href="https://alfonsopretelt.com/">Alfonso Pretelt</a></small></p>
+    </body>
 
-    <div class="pie"></div>
-    </div>
-</div>
+    </html>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<div class="pie"></div>
-
-</body>
-
-</html>
 
 
