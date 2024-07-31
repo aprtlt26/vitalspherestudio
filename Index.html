@@ -3,200 +3,319 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>VitalSphere Studio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Mi Portafolio</title>
     <style>
         body {
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
+            background: rgb(0, 0, 0);
             display: flex;
             flex-direction: column;
-            align-items: center;
-            background-color: #ffffff;
-            color: #212121;
-            text-align: justify;
+            min-height: 100vh;
+            color: rgb(215, 215, 215);
+            font-size: 19px;
+            position: relative;
+            z-index: 0;
         }
 
-        iframe {
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('FON.webp') no-repeat center center fixed;
+            background-size: cover;
+            opacity: 0.8;
+            z-index: -1;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 120px;
+            font-size: small;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            white-space: nowrap;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            position: relative;
+        }
+
+        .gallery-item {
+            flex: 0 0 auto;
+            width: 250px;
+            height: 500px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            display: inline-block;
+            cursor: pointer;
+            transition: transform 0.3s;
+            scroll-snap-align: start;
+            transform-origin: center left;
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 3.9);
+
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item iframe {
             width: 100%;
             height: 100%;
-            box-sizing: border-box;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .gallery-item .content {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .gallery-item h3 {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        .gallery-item p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .selected-content {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 100;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
+
+        }
+
+        .selected-content iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .selected-content .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        h4 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        h6 {
+            font-size: 20px;
+            margin-top: 15px;
+        }
+
+        a {
+            color: #57f83a;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
 
         section {
-            text-align: center;
-            margin-top: 80px;
-        }
-
-        .col-md-6 {
-            max-width: 800px;
-            width: 100%;
-        }
-
-        .pie {
-            height: 50px;
-            width: 100%;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        img+p {
-            font-size: 14px;
             margin-bottom: 20px;
         }
 
-        h2.text-center {
-            font-size: 24px;
-        }
-
-        p#servicios-text {
-            font-size: 14px;
-        }
-
-        .video-container {
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-bottom: 20px;
-        }
-
-        .video-container iframe {
-            width: 100%;
-            height: 400px; /* Ajusta la altura según tus necesidades */
-            margin-bottom: 20px;
-        }
-
-        .img-container {
-            display: flex;
-            flex-wrap: wrap;
             justify-content: space-between;
+            transform: translateY(-50%);
+            pointer-events: none;
         }
 
-        .img-container div {
-            width: 48%;
-            box-sizing: border-box;
-        }
-
-        .img-container img {
-            width: 100%;
-            height: auto;
-        }
-
-        @media (max-width: 767px) {
-            .video-container iframe {
-                height: 200px; /* Ajusta la altura para pantallas más pequeñas */
-            }
-
-            .img-container div {
-                width: 100%;
-            }
+        .carousel-control {
+            pointer-events: all;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <div class="col-md-3">
-            <div class="center">
-                <video width="520" height="340" style="border: 0; margin: 0;" autoplay muted loop>
-                    <source src="portaj.mp4" type="video/mp4">
-                </video>
+    <div class="container">
+        <img style="width: 40%;" src="cmdc.webp" alt="">
+        <section id="Desarrollo Web">
+            <h4>Desarrollo Web</h4>
+            <h6>[Educación]</h6>
+            <a href="https://culturamaduitama.gov.co/" target="_blank">* Alcaldía Duitama, sector cultura.</a>
+            <div></div>
+            <a href="https://ideofxnica.netlify.app/" target="_blank">* Plataforma Ideofónica</a>
+            <div></div>
+            <a href="https://educaciondescentralizada.netlify.app/" target="_blank">* Plataforma Educativa</a>
+            <div></div>
+            <h6>[Interactividad]</h6>
+            <a href="https://arteypsique.com/" target="_blank">* Plataforma Educativa-interactiva</a>
+            <div></div>
+            <a href="https://arteypsique.com/tarot_syntheziser" target="_blank">* Plataforma interactiva</a>
+            <div></div>
+            <a href="https://gourmet-floral.netlify.app/" target="_blank">* Página web interactiva</a>
+            <div></div>
+            <h6>[Salud]</h6>
+            <a href="https://isabelhernandez.netlify.app/" target="_blank">* Médico especialista en Fisiatria</a>
+            <div></div>
+            <a href="https://optipluss.netlify.app/" target="_blank">* Optipluss. Salud Visual.</a>
+            <div></div>
+            <a href="https://yeisonmicropigmentacion.com/" target="_blank">* Micropigmentación Capilar</a>
+            <div></div>
+            <h6>[Apps para niños]</h6>
+            <a href="https://librodigitalaprtlt.netlify.app/" target="_blank">* Libro Digital interactivo para niños de 3 a 6 años</a>
+            <div></div>
+        </section>
+
+        <div class="gallery">
+            <div class="gallery-item" onclick="openModal('https://culturamaduitama.gov.co/')">
+                <iframe src="https://culturamaduitama.gov.co/" frameborder="0"></iframe>
+                <div class="content">
+                    <h3>Alcaldía Duitama</h3>
+                    <p>Sector cultura.</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://ideofxnica.netlify.app/')">
+                <iframe src="https://ideofxnica.netlify.app/" frameborder="0"></iframe>
+                <div class="content">
+                    <h3>Ideofónica</h3>
+                    <p>Plataforma Ideofónica.</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://educaciondescentralizada.netlify.app/')">
+                <iframe src="https://educaciondescentralizada.netlify.app/" frameborder="0"></iframe>
+                <div class="content">
+                    <h3>Educación Descentralizada</h3>
+                    <p>Plataforma Educativa.</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://arteypsique.com/')">
+                <iframe src="https://arteypsique.com/" frameborder="0"></iframe>
+                <div class="content">
+                    <h3>Arte y Psique</h3>
+                    <p>Plataforma Educativa-interactiva.</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://arteypsique.com/tarot_syntheziser')">
+                <iframe src="https://arteypsique.com/tarot_syntheziser" frameborder="0"></iframe>
+                <div class="content">
+                    <h3>Tarot Synthesizer</h3>
+                    <p>Plataforma interactiva.</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://gourmet-floral.netlify.app/')">
+                <iframe src="https://gourmet-floral.netlify.app/" frameborder="0"></iframe>
+                <div class="content">
+                    <h3>Gourmet Floral</h3>
+                    <p>Página web interactiva.</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://librodigitalaprtlt.netlify.app/')">
+                <iframe src="https://librodigitalaprtlt.netlify.app/" frameborder="0"></iframe>
+                <div class="content">
+                    <h3>Libro Digital</h3>
+                    <p>Libro Digital interactivo para niños de 3 a 6 años.</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://isabelhernandez.netlify.app/')">
+                <iframe src="https://isabelhernandez.netlify.app/" frameborder="0"></iframe>
+                <div class="content">
+                    <h3>Isabel Hernandez</h3>
+                    <p>Página web personal para Isabel Hernandez.</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://optipluss.netlify.app/')">
+                <iframe src="https://optipluss.netlify.app/" frameborder="0"></iframe>
+                <div class="content">
+                    <h3>Optipluss</h3>
+                    <p>Salud Visual. Optipluss.</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://yeisonmicropigmentacion.com/')">
+                <iframe src="https://yeisonmicropigmentacion.com/" frameborder="0"></iframe>
+                <div class="content">
+                    <h3>Yeison Micropigmentación</h3>
+                    <p>Página de servicios de micropigmentación.</p>
+                </div>
             </div>
         </div>
-    </header>
 
-    <div class="col-md-6">
-
-       
-     
-              
-
-
-            
-                <p>√ Creación, diseño y desarrollo web. </p>
-                <p> √ Creación de contenido</p>
-                <p> √ Asistencia virtual </p>
-                <p> √ Enseñanza de herramientas digitales </p>
-
-            </section>
-        </div>
-        <div class="container">
-            <section id="Desarrollo Web">
-                <h4>Desarrollo Web</h4>
-                <h6> [Salud] </h6>
-                <a href="https://isabelhernandez.netlify.app/" target="_blank">*  Médico especialista en Fisiatria</a>
-                <div></div>
-                <a href="https://optipluss.netlify.app/" target="_blank">* Optipluss. Salud Visual. </a>
-                <div></div>
-                <div></div>
-                <a href="https://yeisonmicropigmentacion.com/" target="_blank">* Micropigmentación Capilar </a>
-                <div></div>
-                <section>  </section>
-                                <div></div>
-
-                
-               <h6> [Educación] </h6>
-                <div></div>
-                <a href=https://culturamaduitama.gov.co/" target="_blank">* Alcaldía Duitama, sector cultura. </a>
-                <div></div>
-                                <a href="https://ideofxnica.netlify.app/" target="_blank">* Plataforma Ideofónica</a>
-
-                <div></div>
-                <a href="https://educaciondescentralizada.netlify.app/" target="_blank">* PLataforma Educativa</a>
-                <div></div>
-  <section>  </section>
-                                <div></div>
-
-                          <h6> [Interactividad] </h6>
-                <a href="https://arteypsique.com/" target="_blank">* PLataforma Educativa-interactiva</a>
-                <div></div>
-                <a href="https://arteypsique.com/tarot_syntheziser" target="_blank">* PLataforma interactiva </a>
-                <div></div>
-                <div></div>
-                <a href="https://gourmet-floral.netlify.app/ " target="_blank">* pagina web interactiva </a>
-                <div></div>
-                <section>  </section>
-
-
-                <h6> [Apps para niños] </h6>
-                <a href="https://librodigitalaprtlt.netlify.app/" target="_blank">* Libro Digital interactivo para niños de 3 a 6 años</a>
-                <div></div>
-           
-
-            <section id="contact">
-                <h4>Contact</h4>
-                <p>aprtlt26@gmail.com</p>
-                <p>+57 3160533996</p>
-            </section>
-
-            <div class="pie"></div>
-
-            <p><small>Design and Develop by <a href="https://alfonsopretelt.com/">Alfonso Pretelt</a></small></p>
-
-            <div class="pie"></div>
+        <div class="carousel-controls">
+            <button class="carousel-control" onclick="scrollGallery(-200)">&#10094;</button>
+            <button class="carousel-control" onclick="scrollGallery(200)">&#10095;</button>
         </div>
 
+        <div class="selected-content" id="selectedContent">
+            <button class="close-btn" onclick="closeModal()">Cerrar</button>
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+
+        <section></section>
+
+        <p> Desarrollo dinamico, diseño resposive, interactividad, bases de datos, registro y log-in. Ing Multimedia: Alfonso Hernández +57 3160533996 aprtlt26@gmail.com </p>
+
+    </div>
 
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function openModal(url) {
+            const modal = document.getElementById('selectedContent');
+            const iframe = modal.querySelector('iframe');
+            iframe.src = url;
+            modal.style.display = 'block';
+        }
 
-        <div class="pie"></div>
+        function closeModal() {
+            const modal = document.getElementById('selectedContent');
+            const iframe = modal.querySelector('iframe');
+            iframe.src = '';
+            modal.style.display = 'none';
+        }
 
-    </body>
+        function scrollGallery(distance) {
+            const gallery = document.querySelector('.gallery');
+            gallery.scrollBy({ left: distance, behavior: 'smooth' });
+        }
+    </script>
+</body>
 
-    </html>
+</html>
 
 
 
