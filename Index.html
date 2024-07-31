@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+    <link rel="icon" type="image/x-icon" href="FO.webp">
+
 
 <head>
     <meta charset="UTF-8">
@@ -53,8 +55,8 @@
 
         .gallery-item {
             flex: 0 0 auto;
-            width: 250px;
-            height: 500px;
+            width: 200px;
+            height: 400px;
             background-color: #ffffff;
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -64,8 +66,7 @@
             transition: transform 0.3s;
             scroll-snap-align: start;
             transform-origin: center left;
-            box-shadow: 0 5px 8px rgba(0, 0, 0, 3.9);
-
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .gallery-item:hover {
@@ -105,9 +106,8 @@
             background-color: #fff;
             border-radius: 8px;
             overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             z-index: 100;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
-
         }
 
         .selected-content iframe {
@@ -150,24 +150,15 @@
             margin-bottom: 20px;
         }
 
-        .carousel-controls {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-            pointer-events: none;
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 3s forwards;
         }
 
-        .carousel-control {
-            pointer-events: all;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 50%;
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -175,7 +166,7 @@
 <body>
     <div class="container">
         <img style="width: 40%;" src="cmdc.webp" alt="">
-        <section id="Desarrollo Web">
+        <section id="Desarrollo Web" class="fade-in">
             <h4>Desarrollo Web</h4>
             <h6>[Educación]</h6>
             <a href="https://culturamaduitama.gov.co/" target="_blank">* Alcaldía Duitama, sector cultura.</a>
@@ -285,13 +276,7 @@
             <button class="close-btn" onclick="closeModal()">Cerrar</button>
             <iframe src="" frameborder="0"></iframe>
         </div>
-
-        <section></section>
-
-        <p> Desarrollo dinamico, diseño resposive, interactividad, bases de datos, registro y log-in. Ing Multimedia: Alfonso Hernández +57 3160533996 aprtlt26@gmail.com </p>
-
     </div>
-
 
     <script>
         function openModal(url) {
