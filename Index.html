@@ -12,11 +12,11 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background: rgb(0, 0, 0);
+            background: rgb(255, 255, 255);
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            color: rgb(215, 215, 215);
+            color: rgb(255, 255, 255);
             font-size: 19px;
             position: relative;
             z-index: 0;
@@ -56,8 +56,8 @@
             flex: 0 0 auto;
             width: 200px;
             height: 400px;
-            background-color: #ffffff;
-            border: 1px solid #ddd;
+            background-color: #ffffff00;
+            border: 1px solid #000000;
             border-radius: 8px;
             overflow: hidden;
             display: inline-block;
@@ -65,7 +65,7 @@
             transition: transform 0.3s;
             scroll-snap-align: start;
             transform-origin: center left;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 2.9);
             position: relative;
         }
 
@@ -138,7 +138,7 @@
         }
 
         a {
-            color: #57f83a;
+            color: #097860eb;
             text-decoration: none;
         }
 
@@ -180,12 +180,12 @@
         }
 
         .typewriter:hover {
-            color: rgb(13, 234, 227);
+            color: rgba(13, 234, 227, 0.672);
         }
 
         .quote-form {
             flex: 0 0 200px;
-            background: rgba(255, 255, 255, 0.335);
+            background: rgba(255, 255, 255, 0.123);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgb(0, 0, 0);
@@ -218,6 +218,14 @@
         .quote-form button:hover {
             background-color: #3bd5d5;
         }
+
+        .footer{
+            display: flex;
+            font-size: small;
+            justify-content: center;
+            margin-top: 50px;
+            padding-top: 50px;
+        }
     </style>
 </head>
 
@@ -225,7 +233,7 @@
     <div class="container">
         <section id="Desarrollo Web" class="fade-in">
             <h4>Desarrollo Web</h4>
-            <p class="typewriter">Diseño dinámico y responsive, interactividad e impacto audiovisual. Artista y Desarrollador Multimedia. Alfonso Hernandez / Mail: aprtlt26@gmail.com</p>
+            <p class="typewriter">Diseño dinámico e integral, interactividad e impacto audiovisual. Artista y Desarrollador Multimedia. </p>
         </section>
 
         <div style="display: flex;">
@@ -325,6 +333,8 @@
                         <option value="landing">Landing Page</option>
                         <option value="platform">Plataforma con BD</option>
                         <option value="static">Página Estática</option>
+                        <option value="otro">Otro</option>
+
                     </select>
 
                     <label for="message">Mensaje:</label>
@@ -347,7 +357,7 @@
 
         <section> </section>
         <img style="width: 40%;" src="cmdc.webp" alt="">
-        <h6>[Educación]</h6>
+        <h6>[Intitucional]</h6>
         <a href="https://culturamaduitama.gov.co/" target="_blank">* Alcaldía Duitama, sector cultura.</a>
         <div></div>
         <a href="https://ideofxnica.netlify.app/" target="_blank">* Plataforma Ideofónica</a>
@@ -372,6 +382,11 @@
         <a href="https://librodigitalaprtlt.netlify.app/" target="_blank">* Libro Digital interactivo para niños de 3 a 6 años</a>
         <div></div>
     </div>
+
+    <div class="footer">
+        <p>AlfonsoPretelt® All rights reserved</p>
+    </div>
+
     <script>
         function openModal(url) {
             const modal = document.getElementById('selectedContent');
@@ -407,6 +422,7 @@
 </body>
 
 </html>
+
 
 
 
