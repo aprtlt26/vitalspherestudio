@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="icon" type="image/x-icon" href="FOND.webp">
+<link rel="icon" type="image/x-icon" href="FOND.webp">
 
 <head>
     <meta charset="UTF-8">
@@ -12,12 +12,12 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background: rgb(255, 255, 255);
+            background: rgb(88, 55, 249);
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            color: rgb(255, 255, 255);
-            font-size: 19px;
+            color: rgb(211, 255, 148);
+            font-size: 15px;
             position: relative;
             z-index: 0;
         }
@@ -38,13 +38,13 @@
         .container {
             width: 80%;
             margin: 0 auto;
-            padding: 120px;
+            padding: 20px;
             font-size: small;
         }
 
         .gallery {
             display: flex;
-            gap: 20px;
+            gap: 10px;
             overflow-x: auto;
             white-space: nowrap;
             scroll-snap-type: x mandatory;
@@ -54,10 +54,10 @@
 
         .gallery-item {
             flex: 0 0 auto;
-            width: 200px;
+            width: 180px;
             height: 400px;
-            background-color: #ffffff00;
-            border: 1px solid #000000;
+            background-color: #ffffff4c;
+            border: 1px solid #acacac;
             border-radius: 8px;
             overflow: hidden;
             display: inline-block;
@@ -65,7 +65,7 @@
             transition: transform 0.3s;
             scroll-snap-align: start;
             transform-origin: center left;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 2.9);
+            box-shadow: 0 9px 8px rgb(93, 93, 245);
             position: relative;
         }
 
@@ -73,7 +73,8 @@
             transform: scale(1.05);
         }
 
-        .gallery-item iframe, .gallery-item img {
+        .gallery-item iframe,
+        .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -81,18 +82,19 @@
         }
 
         .gallery-item .content {
-            padding: 10px;
+            padding: 5px;
             text-align: center;
         }
 
         .gallery-item h3 {
             margin: 0;
-            font-size: 1em;
+            font-size: 0.75em;
         }
 
         .gallery-item p {
-            margin: 5px 0;
+            margin: 3px 0;
             color: #555;
+            font-size: 0.65em;
         }
 
         .selected-content {
@@ -101,13 +103,13 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 80%;
+            width: 90%;
             height: 80%;
             background-color: #fff;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            z-index: 100;
+            box-shadow: 0 9px 8px rgb(93, 93, 245);
+                        z-index: 100;
         }
 
         .selected-content iframe {
@@ -128,22 +130,24 @@
         }
 
         h4 {
-            font-size: 24px;
+            font-size: 17px;
             margin-top: 20px;
         }
 
         h6 {
-            font-size: 20px;
+            font-size: 16px;
             margin-top: 15px;
         }
 
         a {
-            color: #097860eb;
+            color: #595959eb;
             text-decoration: none;
+            text-shadow: 0 1px 9px rgb(190, 255, 77);
         }
 
         a:hover {
-            text-decoration: underline;
+            text-decoration: none;
+            color: rgba(82, 82, 251, 0.71);
         }
 
         section {
@@ -166,17 +170,28 @@
             overflow: hidden;
             white-space: nowrap;
             border-right: 3px solid;
-            animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+            animation: typing 4s steps(20, end), blink-caret 0.75s step-end infinite;
         }
 
         @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
         }
 
         @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: white; }
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: white;
+            }
         }
 
         .typewriter:hover {
@@ -184,30 +199,32 @@
         }
 
         .quote-form {
-            flex: 0 0 200px;
+            display: none;
+            flex-direction: column;
             background: rgba(255, 255, 255, 0.123);
-            padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgb(0, 0, 0);
-            margin-left: 20px;
+            box-shadow: 0 9px 8px rgb(93, 93, 245);
+            margin-left: 5px;
             font-size: small;
             align-self: flex-start;
+            width: 50%;
+            margin-top: 30px;
+            transition: max-height 0.5s ease;
         }
 
         .quote-form input,
         .quote-form select,
         .quote-form textarea {
             width: 100%;
-            padding: 10px;
+            padding: 8px;
             margin: 10px 0;
             border-radius: 4px;
             border: 1px solid #ccc;
-            border-color: #46c5d6;
-
+            border-color: #38ccdf;
         }
 
         .quote-form button {
-            background-color: #46c5d6;
+            background-color: #4684d6;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -216,15 +233,28 @@
         }
 
         .quote-form button:hover {
-            background-color: #3bd5d5;
+            background-color: #3b7bd5;
         }
 
-        .footer{
+        .footer {
             display: flex;
             font-size: small;
             justify-content: center;
             margin-top: 50px;
             padding-top: 50px;
+        }
+
+        #solicita{
+            display: flex;
+            padding: 10px;
+            background-color: #3bd5d551;
+            color: aliceblue;
+            width: 15%;
+            height: 5%;
+            border-radius: 5px;
+            margin-top: 20px;
+
+
         }
     </style>
 </head>
@@ -232,11 +262,11 @@
 <body>
     <div class="container">
         <section id="Desarrollo Web" class="fade-in">
-            <h4>Desarrollo Web</h4>
-            <p class="typewriter">Diseño dinámico e integral, interactividad e impacto audiovisual. Artista y Desarrollador Multimedia. </p>
+            <h4>Alfonso H Pretelt</h4>
+            <p class="typewriter">Desarrollo web de alta calidad. Diseño dinámico e integral, interactividad e impacto audiovisual. Artista y Desarrollador Multimedia. </p>
         </section>
 
-        <div style="display: flex;">
+        <div style="display: flex; flex-wrap: wrap;">
             <div class="gallery">
                 <div class="gallery-item" onclick="openModal('https://culturamaduitama.gov.co/')">
                     <iframe src="https://culturamaduitama.gov.co/" frameborder="0"></iframe>
@@ -245,28 +275,28 @@
                         <p>Sector cultura.</p>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="loadIframe(this)">
-                    <img src="ideofo.webp" data-src="https://ideofxnica.netlify.app/" alt="Ideofónica">
+                <div class="gallery-item"onclick="openModal('https://ideofxnica.netlify.app/')">
+                    <iframe src="ideof.gif" frameborder="0"></iframe>
                     <div class="content">
                         <h3>Ideofónica</h3>
                         <p>Plataforma Ideofónica.</p>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="loadIframe(this)">
-                    <img src="jueg.webp" data-src="https://librodigitalaprtlt.netlify.app/" alt="Libro Digital">
+                <div class="gallery-item" onclick="openModal('ttps://librodigitalaprtlt.netlify.app/')">
+                    <iframe src="jueg.webp" frameborder="0"></iframe>
                     <div class="content">
                         <h3>Libro Digital</h3>
                         <p>Libro Digital interactivo para niños de 3 a 6 años.</p>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="loadIframe(this)">
-                    <img src="eclip.gif" data-src="https://arteypsique.com/lematworld.html" alt="Sound-game">
+                <div class="gallery-item" onclick="openModal('https://arteypsique.com/lematworld.html/')">
+                    <iframe src="eclip.gif" frameborder="0"></iframe>
                     <div class="content">
                         <h3>Sound-game</h3>
                         <p>Plataforma Sonido-interactividad.</p>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="loadIframe(this)">
+                <div class="gallery-item" onclick="openModal('https://arteypsique.com/tarot_syntheziser/')">
                     <img src="tar.webp" data-src="https://arteypsique.com/tarot_syntheziser" alt="Tarot Synthesizer">
                     <div class="content">
                         <h3>Tarot Synthesizer</h3>
@@ -317,8 +347,11 @@
                 </div>
             </div>
 
-            <div class="quote-form">
-                <h4>Solicita tu Cotización</h4>
+            <button id="solicita" onclick="toggleForm()" class="quote-form-toggle">
+                Solicita tu Cotización
+            </button>
+
+            <div class="quote-form" id="quoteForm">
                 <form action="https://formspree.io/f/mayrebry" method="POST">
                     <label for="name">Nombre:</label>
                     <input type="text" id="name" name="name" required>
@@ -334,7 +367,6 @@
                         <option value="platform">Plataforma con BD</option>
                         <option value="static">Página Estática</option>
                         <option value="otro">Otro</option>
-
                     </select>
 
                     <label for="message">Mensaje:</label>
@@ -404,7 +436,10 @@
 
         function scrollGallery(distance) {
             const gallery = document.querySelector('.gallery');
-            gallery.scrollBy({ left: distance, behavior: 'smooth' });
+            gallery.scrollBy({
+                left: distance,
+                behavior: 'smooth'
+            });
         }
 
         function loadIframe(element) {
@@ -418,12 +453,12 @@
             iframe.style.pointerEvents = 'none';
             element.replaceChild(iframe, img);
         }
+
+        function toggleForm() {
+            const form = document.getElementById('quoteForm');
+            form.style.display = form.style.display === 'none' || form.style.display === '' ? 'flex' : 'none';
+        }
     </script>
 </body>
 
 </html>
-
-
-
-
-
