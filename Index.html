@@ -43,6 +43,7 @@ body::before {
     margin: 0 auto;
     padding: 20px;
     font-size: small;
+
 }
 
 .gallery {
@@ -53,6 +54,8 @@ body::before {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     position: relative;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.198), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
+
 }
 
 .gallery-item {
@@ -68,12 +71,15 @@ body::before {
     transition: transform 0.3s;
     scroll-snap-align: start;
     transform-origin: center left;
-    box-shadow: 0 9px 8px rgb(93, 93, 245);
     position: relative;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.198), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
+
 }
 
 .gallery-item:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.198), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
+
 }
 
 .gallery-item iframe,
@@ -111,8 +117,9 @@ body::before {
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 9px 8px rgb(93, 93, 245);
     z-index: 100;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.198), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
+
 }
 
 .selected-content iframe {
@@ -332,19 +339,37 @@ section {
                     </div>
                 </div>
                 <div class="gallery-item"onclick="openModal('https://ideofxnica.netlify.app/')">
-                    <iframe src="ideof.gif" frameborder="0"></iframe>
+                    <iframe src="ideof.gif" frameborder="0"></iframe>nom
                     <div class="content">
                         <h3>Ideofónica</h3>
                         <p>Plataforma Ideofónica.</p>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="openModal('https://librodigitalaprtlt.netlify.app/')">
-                    <iframe src="jueg.webp" frameborder="0"></iframe>
+
+                <div class="gallery-item" onclick="openModal('https://arteypsique.com/')">
+                    <iframe src="https://arteypsique.com/" frameborder="0"></iframe>
                     <div class="content">
-                        <h3>Libro Digital</h3>
-                        <p>Libro Digital interactivo para niños de 3 a 6 años.</p>
+                        <h3>Arte y Psique</h3>
+                        <p>Plataforma Educativa-interactiva.</p>
                     </div>
                 </div>
+                
+                <div class="gallery-item" onclick="openModal('https://gourmet-floral.netlify.app/')">
+                    <iframe src="https://gourmet-floral.netlify.app/" frameborder="0"></iframe>
+                    <div class="content">
+                        <h3>Gourmet Floral</h3>
+                        <p>Página web interactiva.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openModal('https://vitacorapp.netlify.app/')">
+                    <iframe src="https://vitacorapp.netlify.app/" frameborder="0"></iframe>
+                    <div class="content">
+                        <h3>Nomade</h3>
+                        <p>Plataforma para mujeres viajeras.</p>
+                    </div>
+                </div>
+
                 <div class="gallery-item" onclick="openModal('https://arteypsique.com/lematworld.html/')">
                     <iframe src="eclip.gif" frameborder="0"></iframe>
                     <div class="content">
@@ -359,20 +384,15 @@ section {
                         <p>Plataforma interactiva.</p>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="openModal('https://arteypsique.com/')">
-                    <iframe src="https://arteypsique.com/" frameborder="0"></iframe>
+                <div class="gallery-item" onclick="openModal('https://librodigitalaprtlt.netlify.app/collage.html')">
+                    <iframe src="https://librodigitalaprtlt.netlify.app/collage.html" frameborder="0"></iframe>
                     <div class="content">
-                        <h3>Arte y Psique</h3>
-                        <p>Plataforma Educativa-interactiva.</p>
+                        <h3>Libro Digital</h3>
+                        <p>Libro Digital interactivo para niños de 3 a 6 años.</p>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="openModal('https://gourmet-floral.netlify.app/')">
-                    <iframe src="https://gourmet-floral.netlify.app/" frameborder="0"></iframe>
-                    <div class="content">
-                        <h3>Gourmet Floral</h3>
-                        <p>Página web interactiva.</p>
-                    </div>
-                </div>
+          
+               
                 <div class="gallery-item" onclick="openModal('https://educaciondescentralizada.netlify.app/')">
                     <iframe src="https://educaciondescentralizada.netlify.app/" frameborder="0"></iframe>
                     <div class="content">
@@ -394,13 +414,7 @@ section {
                         <p>Salud Visual. Optipluss.</p>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="openModal('https://yeisonmicropigmentacion.com/')">
-                    <iframe src="https://yeisonmicropigmentacion.com/" frameborder="0"></iframe>
-                    <div class="content">
-                        <h3>Yeison Micropigmentación</h3>
-                        <p>Página de servicios de micropigmentación.</p>
-                    </div>
-                </div>
+              
             </div>
 
             <button id="solicita" onclick="toggleForm()" class="quote-form-toggle">
@@ -443,34 +457,7 @@ section {
             <iframe src="" frameborder="0"></iframe>
         </div>
 
-        <section> </section>
-        <img style="width: 40%;" src="cmdc.webp" alt="">
-        <h6>[Intitucional]</h6>
-        <a href="https://culturamaduitama.gov.co/" target="_blank">* Alcaldía Duitama, sector cultura.</a>
-        <div></div>
-        <a href="https://ideofxnica.netlify.app/" target="_blank">* Plataforma Ideofónica</a>
-        <div></div>
-        <a href="https://educaciondescentralizada.netlify.app/" target="_blank">* Plataforma Educativa</a>
-        <div></div>
-        <h6>[Interactividad]</h6>
-        <a href="https://arteypsique.com/" target="_blank">* Plataforma Educativa-interactiva</a>
-        <div></div>
-        <a href="https://arteypsique.com/tarot_syntheziser" target="_blank">* Plataforma interactiva</a>
-        <div></div>
-        <a href="https://gourmet-floral.netlify.app/" target="_blank">* Página web interactiva</a>
-        <div></div>
-        <h6>[Salud]</h6>
-        <a href="https://isabelhernandez.netlify.app/" target="_blank">* Médico especialista en Fisiatria</a>
-        <div></div>
-        <a href="https://optipluss.netlify.app/" target="_blank">* Optipluss. Salud Visual.</a>
-        <div></div>
-        <a href="https://yeisonmicropigmentacion.com/" target="_blank">* Micropigmentación Capilar</a>
-        <div></div>
-        <h6>[Apps para niños]</h6>
-        <a href="https://librodigitalaprtlt.netlify.app/" target="_blank">* Libro Digital interactivo para niños de 3 a 6 años</a>
-        <div></div>
-    </div>
-
+        
     <div class="footer">
         <p>AlfonsoPretelt® All rights reserved</p>
     </div>
@@ -518,4 +505,5 @@ section {
 </body>
 
 </html>
+
 
